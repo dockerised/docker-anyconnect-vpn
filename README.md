@@ -17,4 +17,4 @@ docker run -v `pwd`/entrypoint.sh:/entrypoint.sh -it -e ANYCONNECT_SERVER=${ANYC
 
 - Successful output from prompt shown below 
 
-![](2021-10-06-14-04-20.png)
+![](2021-10-06-14-04-21.png)
