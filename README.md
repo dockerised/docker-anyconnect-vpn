@@ -11,7 +11,11 @@ export ANYCONNECT_SERVER=
 export ANYCONNECT_USER=
 export ANYCONNECT_PASSWORD=
 
-docker run -v `pwd`/entrypoint.sh:/entrypoint.sh -it -e ANYCONNECT_SERVER=${ANYCONNECT_SERVER} -e ANYCONNECT_USER=${ANYCONNECT_USER} -e ANYCONNECT_PASSWORD=${ANYCONNECT_PASSWORD} --privileged george7522/anyconnect
+docker rm -f vpn ; 
+docker run --name vpn -d -v `~/.ssh`:/root/.ssh:ro -e ANYCONNECT_SERVER=${ANYCONNECT_SERVER} -e ANYCONNECT_USER=${ANYCONNECT_USER} -e ANYCONNECT_PASSWORD=${ANYCONNECT_PASSWORD} --privileged george7522/anyconnect
+docker exec -it vpn sh
+
+#Run commands to your VPN'ed network
 
 ```
 
